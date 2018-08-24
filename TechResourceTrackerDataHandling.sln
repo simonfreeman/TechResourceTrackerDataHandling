@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechResourceTrackerDataHandling", "TechResourceTrackerDataHandling\TechResourceTrackerDataHandling.csproj", "{B458AEB2-B04F-4F68-A062-AFAB0458F94C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechResourceTrackerDataHandling", "TechResourceTrackerDataHandling\TechResourceTrackerDataHandling.csproj", "{B458AEB2-B04F-4F68-A062-AFAB0458F94C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

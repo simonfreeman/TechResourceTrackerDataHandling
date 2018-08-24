@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TechResourceTrackerDataHandling.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TechResourceTrackerDataHandling
 {
@@ -25,6 +27,8 @@ namespace TechResourceTrackerDataHandling
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<TechResourcesContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("TechResourcesDatabase")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
