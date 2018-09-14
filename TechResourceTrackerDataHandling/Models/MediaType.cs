@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace TechResourceTrackerDataHandling.Models
 {
@@ -11,7 +12,9 @@ namespace TechResourceTrackerDataHandling.Models
         }
 
         public int Id { get; set; }
-        public string MediaType1 { get; set; }
+
+        [Required]
+        public string Type { get; set; }
 
         public ICollection<Feed> Feed { get; set; }
     }
