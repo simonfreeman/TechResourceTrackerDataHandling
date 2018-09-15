@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechResourceTrackerDataHandling.Models;
 
 namespace TechResourceTrackerDataHandling.Migrations
 {
     [DbContext(typeof(TechResourcesContext))]
-    partial class TechResourcesContextModelSnapshot : ModelSnapshot
+    [Migration("20180915235110_DateViolationForCspReports")]
+    partial class DateViolationForCspReports
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

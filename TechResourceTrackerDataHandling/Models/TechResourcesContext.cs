@@ -20,6 +20,7 @@ namespace TechResourceTrackerDataHandling.Models
         public virtual DbSet<Feed> Feed { get; set; }
         public virtual DbSet<FeedItem> FeedItem { get; set; }
         public virtual DbSet<MediaType> MediaType { get; set; }
+        public virtual DbSet<CspReport> CspReport { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -78,6 +79,13 @@ namespace TechResourceTrackerDataHandling.Models
                     .HasColumnName("Type")
                     .HasMaxLength(50);
 
+            });
+
+            modelBuilder.Entity<CspReport>(entity =>
+            {
+                entity.Property(e => e.DateViolated)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("getdate()");
             });
 
             //SEED DATA

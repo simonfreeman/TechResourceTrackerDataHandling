@@ -19,7 +19,10 @@ namespace TechResourceTrackerDataHandling.Models
 
         [Required]
         public DateTime DatePublished { get; set; }
+
         public bool Seen { get; set; }
+
+        [Required]
         public string Url { get; set; }
 
         public Feed Feed { get; set; }
