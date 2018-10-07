@@ -14,7 +14,6 @@ namespace TechResourceTrackerDataHandling.Controllers
     public class FeedsController : ControllerBase
     {
         private readonly TechResourcesContext _context;
-
         public FeedsController(TechResourcesContext context)
         {
             _context = context;
@@ -29,7 +28,7 @@ namespace TechResourceTrackerDataHandling.Controllers
 
         // GET: api/Feeds/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetFeed([FromRoute] int id)
+        public async Task<IActionResult> GetFeed(int id)
         {
             var feed = await _context.Feed.FindAsync(id);
 
@@ -43,13 +42,13 @@ namespace TechResourceTrackerDataHandling.Controllers
 
         // PUT: api/Feeds/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutFeed([FromRoute] int id, [FromBody] Feed feed)
+        public async Task<IActionResult> PutFeed(int id, Feed feed)
         {
             if (id != feed.Id)
             {
                 return BadRequest();
             }
-
+                
             _context.Entry(feed).State = EntityState.Modified;
 
             try
@@ -73,7 +72,7 @@ namespace TechResourceTrackerDataHandling.Controllers
 
         // POST: api/Feeds
         [HttpPost]
-        public async Task<IActionResult> PostFeed([FromBody] Feed feed)
+        public async Task<IActionResult> PostFeed(Feed feed)
         {
             _context.Feed.Add(feed);
             await _context.SaveChangesAsync();
