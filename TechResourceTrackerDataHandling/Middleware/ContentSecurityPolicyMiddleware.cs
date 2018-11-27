@@ -17,7 +17,7 @@ namespace TechResourceTrackerDataHandling.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            context.Response.Headers.Add("Content-Security-Policy", @"default-src  https://*; report-uri /api/CspReports");
+            context.Response.Headers.Add("Content-Security-Policy", @"default-src 'none'; img-src 'self'; script-src 'self'; style-src 'self'  https://*; report-uri /api/CspReports");
             await _next(context);
         }
     }
