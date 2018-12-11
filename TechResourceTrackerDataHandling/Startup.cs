@@ -42,6 +42,7 @@ namespace TechResourceTrackerDataHandling
                     .First(formatter => formatter.SupportedMediaTypes.Contains("application/json"))
                     .SupportedMediaTypes.Add("application/csp-report");
             });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +51,8 @@ namespace TechResourceTrackerDataHandling
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors(builder =>
+                    builder.WithOrigins("http://localhost:8080"));
             }
             else
             {
